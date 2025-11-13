@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2025
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Board overlay file for Nucleo L476RG
+ * Enables USART3 with default pins PB10 (TX) and PB11 (RX)
+ */
+
+&usart3 {
+	status = "okay";
+};

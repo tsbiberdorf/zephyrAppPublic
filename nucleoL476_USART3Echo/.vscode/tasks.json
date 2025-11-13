@@ -1,0 +1,186 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+			],
+			"windows": {
+				"command": "powershell",
+				"args": [
+					"-Command",
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+				]
+			},
+			"linux": {
+				"command": "bash",
+				"args": [
+					"-c",
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+				]
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "Clean Build",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+			],
+			"windows": {
+				"command": "powershell",
+				"args": [
+					"-Command",
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+				]
+			},
+			"linux": {
+				"command": "bash",
+				"args": [
+					"-c",
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+				]
+			},
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "Flash",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west flash -d ../build/nucleoL476_USART3Echo"
+			],
+			"windows": {
+				"command": "powershell",
+				"args": [
+					"-Command",
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west flash -d ../build/nucleoL476_USART3Echo"
+				]
+			},
+			"linux": {
+				"command": "bash",
+				"args": [
+					"-c",
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west flash -d ../build/nucleoL476_USART3Echo"
+				]
+			},
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "Build and Flash",
+			"type": "shell",
+			"command": "echo",
+			"args": [
+				"Build and Flash complete"
+			],
+			"group": "test",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": false
+			},
+			"dependsOn": [
+				"Build",
+				"Flash"
+			],
+			"dependsOrder": "sequence"
+		},
+		{
+			"label": "Clean Build Directory",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"../../build/nucleoL476_USART3Echo"
+			],
+			"windows": {
+				"command": "powershell",
+				"args": [
+					"-Command",
+					"Remove-Item",
+					"-Path",
+					"../../build/nucleoL476_USART3Echo",
+					"-Recurse",
+					"-Force",
+					"-ErrorAction",
+					"SilentlyContinue"
+				]
+			},
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "Debug Build",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+			],
+			"windows": {
+				"command": "powershell",
+				"args": [
+					"-Command",
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+				]
+			},
+			"linux": {
+				"command": "bash",
+				"args": [
+					"-c",
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+				]
+			},
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		}
+	]
+}

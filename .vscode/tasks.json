@@ -1,0 +1,174 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Zephyr: Build nucleo_l476rg_blinky",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -b nucleo_l476rg ../apps-public/nucleo_l476rg_blinky",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: Clean Build nucleo_l476rg_blinky",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -b nucleo_l476rg ../apps-public/nucleo_l476rg_blinky -p",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: Pristine Build nucleo_l476rg_blinky",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -b nucleo_l476rg ../apps-public/nucleo_l476rg_blinky --pristine",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: Flash nucleo_l476rg_blinky",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west flash",
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": false
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"label": "Zephyr: Build and Flash nucleo_l476rg_blinky",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Zephyr: Build nucleo_l476rg_blinky",
+				"Zephyr: Flash nucleo_l476rg_blinky"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "Zephyr: Clean",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue",
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": false
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: Build Size Report",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -t rom_report",
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: RAM Report",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -t ram_report",
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		},
+		{
+			"label": "Zephyr: menuconfig",
+			"type": "shell",
+			"command": ". ${workspaceFolder}/../activate.ps1; cd ${workspaceFolder}/../zephyrproject; west build -t menuconfig",
+			"group": "none",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"options": {
+				"shell": {
+					"executable": "powershell.exe",
+					"args": ["-NoProfile", "-Command"]
+				}
+			}
+		}
+	]
+}
