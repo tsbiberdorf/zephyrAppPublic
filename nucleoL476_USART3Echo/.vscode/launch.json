@@ -2,6 +2,34 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Debug Nucleo-L476RG (J-Link)",
+			"type": "cortex-debug",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"executable": "${workspaceFolder}/../../build/nucleoL476_USART3Echo/zephyr/zephyr.elf",
+			"servertype": "jlink",
+			"serverpath": "C:/Program Files/SEGGER/JLink_V870/JLinkGDBServerCL.exe",
+			"device": "STM32L476RG",
+			"interface": "swd",
+			"runToEntryPoint": "main",
+			"svdFile": "${workspaceFolder}/../../zephyrproject/zephyr/boards/st/nucleo_l476rg/support/STM32L476.svd",
+			"preLaunchTask": "Debug Build",
+			"showDevDebugOutput": "raw",
+			"swoConfig": {
+				"enabled": false
+			},
+			"rttConfig": {
+				"enabled": true,
+				"address": "auto",
+				"decoders": [
+					{
+						"port": 0,
+						"type": "console"
+					}
+				]
+			}
+		},
+		{
 			"name": "Debug Nucleo-L476RG (OpenOCD)",
 			"type": "cortex-debug",
 			"request": "launch",
