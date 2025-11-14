@@ -7,20 +7,20 @@
 			"command": "powershell",
 			"args": [
 				"-Command",
-				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo"
 			],
 			"windows": {
 				"command": "powershell",
 				"args": [
 					"-Command",
-					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo"
 				]
 			},
 			"linux": {
 				"command": "bash",
 				"args": [
 					"-c",
-					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -j"
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo"
 				]
 			},
 			"group": {
@@ -42,20 +42,20 @@
 			"command": "powershell",
 			"args": [
 				"-Command",
-				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo"
 			],
 			"windows": {
 				"command": "powershell",
 				"args": [
 					"-Command",
-					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo"
 				]
 			},
 			"linux": {
 				"command": "bash",
 				"args": [
 					"-c",
-					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo -- -j"
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo --pristine ../apps-public/nucleoL476_USART3Echo"
 				]
 			},
 			"group": "build",
@@ -156,20 +156,20 @@
 			"command": "powershell",
 			"args": [
 				"-Command",
-				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+				"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug"
 			],
 			"windows": {
 				"command": "powershell",
 				"args": [
 					"-Command",
-					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+					"& ${workspaceFolder}/../../.venv/Scripts/Activate.ps1; cd ${workspaceFolder}/../../zephyrproject; west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug"
 				]
 			},
 			"linux": {
 				"command": "bash",
 				"args": [
 					"-c",
-					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug -j"
+					"source ${workspaceFolder}/../../.venv/bin/activate && cd ${workspaceFolder}/../../zephyrproject && west build -b nucleo_l476rg -d ../build/nucleoL476_USART3Echo ../apps-public/nucleoL476_USART3Echo -- -DCMAKE_BUILD_TYPE=Debug"
 				]
 			},
 			"group": "build",

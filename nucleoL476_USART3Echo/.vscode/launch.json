@@ -1,0 +1,50 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Nucleo-L476RG (OpenOCD)",
+			"type": "cortex-debug",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"executable": "${workspaceFolder}/../../build/nucleoL476_USART3Echo/zephyr/zephyr.elf",
+			"servertype": "openocd",
+			"configFiles": [
+				"interface/stlink.cfg",
+				"target/stm32l4x.cfg"
+			],
+			"runToEntryPoint": "main",
+			"svdFile": "${workspaceFolder}/../../zephyrproject/zephyr/boards/st/nucleo_l476rg/support/STM32L476.svd",
+			"preLaunchTask": "Debug Build",
+			"showDevDebugOutput": "none"
+		},
+		{
+			"name": "Debug Nucleo-L476RG (ST-LINK)",
+			"type": "cortex-debug",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"executable": "${workspaceFolder}/../../build/nucleoL476_USART3Echo/zephyr/zephyr.elf",
+			"servertype": "stlink",
+			"device": "STM32L476RG",
+			"interface": "swd",
+			"serialNumber": "",
+			"runToEntryPoint": "main",
+			"svdFile": "${workspaceFolder}/../../zephyrproject/zephyr/boards/st/nucleo_l476rg/support/STM32L476.svd",
+			"preLaunchTask": "Debug Build",
+			"showDevDebugOutput": "none"
+		},
+		{
+			"name": "Attach to Nucleo-L476RG",
+			"type": "cortex-debug",
+			"request": "attach",
+			"cwd": "${workspaceFolder}",
+			"executable": "${workspaceFolder}/../../build/nucleoL476_USART3Echo/zephyr/zephyr.elf",
+			"servertype": "openocd",
+			"configFiles": [
+				"interface/stlink.cfg",
+				"target/stm32l4x.cfg"
+			],
+			"svdFile": "${workspaceFolder}/../../zephyrproject/zephyr/boards/st/nucleo_l476rg/support/STM32L476.svd",
+			"showDevDebugOutput": "none"
+		}
+	]
+}
